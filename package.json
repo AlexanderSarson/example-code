@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "babel": "babel src/babel -d lib",
+    "geo": "node src/geo/app.js",
     "build": "webpack",
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open"
@@ -28,6 +29,8 @@
   },
   "dependencies": {
     "lodash": "^4.17.20",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "express": "^4.17.1",
+    "geojson-utils": "^1.1.0"
   }
 }
