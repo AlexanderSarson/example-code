@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "babel": "babel src/babel -d lib",
+    "event": "node src/events-emit-listen/nodeServer.js ",
     "geo": "node src/geo/app.js",
     "build": "webpack",
     "watch": "webpack --watch",
