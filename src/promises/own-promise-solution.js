@@ -1,3 +1,5 @@
+const crypto = require('crypto')
+
 function getSecureRandoms(size){
   return new Promise((resolve,reject)=>{
     crypto.randomBytes(size, function(err, buffer) {
@@ -7,3 +9,5 @@ function getSecureRandoms(size){
     });
   })
 }
+
+getSecureRandoms(8).then(data => console.log(data))

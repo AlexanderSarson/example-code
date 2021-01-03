@@ -1,3 +1,5 @@
+const crypto = require('crypto')
+
 function getSecureRandoms(size){
   return new Promise((resolve,reject)=>{
     crypto.randomBytes(size, function(err, buffer) {
@@ -22,8 +24,11 @@ const testAsync = async () => {
     const res4 = await p4;
     const res5 = await p5;
     const res6 = await p6;
+
     // parallel execution
-    await Promise.all(p1, p2, p3, p4, p5, p6);
+    const promises = [p1,p2,p3,p4,p5,p6]
+    await Promise.all(promises).then(data => console.log("parallel: " + data.join(", ")));
+    console.log("---------------------------------------------------------------------------------------------")
     console.log(res1, res2, res3, res4, res5, res6);
   } catch (err) {
     console.log(err)
