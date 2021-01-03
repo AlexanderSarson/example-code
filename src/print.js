@@ -1,3 +1,5 @@
 export default function printMe() {
-  console.log('I get called from print.js!');
+  // It returns the right operand (rightExpression) if the left operand (leftExpression) is null or undefined.
+  const name = null ?? 'I can compile newest syntax';
+  console.log(name);
 }
