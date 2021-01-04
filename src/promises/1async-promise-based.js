@@ -15,10 +15,11 @@ function getSecureRandoms(size){
 
 
 // serial execution
-getSecureRandoms(16).then(data => {
+getSecureRandoms(16)
+.then(data => {
   console.log("serial 1: " + data)
   getSecureRandoms(8).then(data => console.log("serial 2: " + data))
-})
+}).catch(err => console.err(err))
 
 // parallel execution
 const p1 = getSecureRandoms(48)
@@ -26,4 +27,7 @@ const p2 = getSecureRandoms(40)
 const p3 = getSecureRandoms(32)
 const p4 = getSecureRandoms(24)
 const promises = [p1,p2,p3,p4]
-Promise.all(promises).then(data => console.log("parallel: " + data.join(", ")))
+
+Promise.all(promises)
+.then(data => console.log("parallel: " + data.join(", ")))
+.catch(err => console.err(err))
