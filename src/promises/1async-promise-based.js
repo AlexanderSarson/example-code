@@ -15,8 +15,10 @@ function getSecureRandoms(size){
 
 
 // serial execution
-getSecureRandoms(16).then(data => console.log("serial 1: " + data))
-getSecureRandoms(8).then(data => console.log("serial 2: " + data))
+getSecureRandoms(16).then(data => {
+  console.log("serial 1: " + data)
+  getSecureRandoms(8).then(data => console.log("serial 2: " + data))
+})
 
 // parallel execution
 const p1 = getSecureRandoms(48)
