@@ -1,5 +1,7 @@
 const crypto = require('crypto')
 
+//Example(s) that demonstrate how to execute asynchronous (promise-based) 
+// code in serial or parallel 
 function getSecureRandoms(size){
   return new Promise((resolve,reject)=>{
     crypto.randomBytes(size, function(err, buffer) {

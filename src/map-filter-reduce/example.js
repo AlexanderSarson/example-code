@@ -8,10 +8,8 @@ let Filter = names.filter(name => name.length <= 3); //returns [Jan, Bo, Ib]
 
 
 //Map creates a new array by transforming every element in an array, individually.  
-var upperNames = names.map(function(name){
-    return name.toUpperCase(); //Returns [ 'LARS','JAN','PETER','BO','FREDERIK','CHRISTIAN','IB','THOMAS' ]
- }) 
-  
+var upperNames = names.map(name => name.toUpperCase()) 
+  //Returns [ 'LARS','JAN','PETER','BO','FREDERIK','CHRISTIAN','IB','THOMAS' ]
 
 
 //Reduces
