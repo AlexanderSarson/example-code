@@ -19,7 +19,9 @@ getSecureRandoms(16)
 .then(data => {
   console.log("serial 1: " + data)
   getSecureRandoms(8).then(data => console.log("serial 2: " + data))
-}).catch(err => console.err(err))
+})
+//Example(s) that demonstrate error handling with promises 
+.catch(err => console.err(err))
 
 // parallel execution
 const p1 = getSecureRandoms(48)
