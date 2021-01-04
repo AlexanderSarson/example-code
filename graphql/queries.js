@@ -7,6 +7,11 @@ mutation Mutation($deleteUserUserName: String!) {
   }
 }
 
+{
+  "deleteUserUserName": "alex"
+}
+
+
 
 query Query {
   users {
@@ -25,5 +30,14 @@ mutation Mutation($addUserInput: UserInput!) {
     password
     name
     role
+  }
+}
+
+{
+  "addUserInput": {
+    "name": "alex",
+    "password": "alex",
+    "role": "user",
+    "userName": "alex"
   }
 }
