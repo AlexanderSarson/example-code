@@ -38,7 +38,7 @@ app.get('/geoapi/findNearbyPlayers/:lon/:lat/:rad', function(req, res) {
   const lat = Number(req.params.lat);
   const rad = Number(req.params.rad);
   const point = {"type":"Point","coordinates":[lon,lat]}
-  let isInside = gju.pointInPolygon(point,gameArea);
+  //let isInside = gju.pointInPolygon(point,gameArea);
   let result = [];
   players.forEach(player => {
      if (gju.geometryWithinRadius(player.geometry, point, rad)) {
